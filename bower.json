@@ -1,0 +1,30 @@
+{
+  "name": "service-subscription-token",
+  "version": "1.0.1",
+  "authors": [
+    "Aron Price <aron@heka.house>"
+  ],
+  "description": "A polymer element to retrieve a subscription key from Firebase.",
+  "keywords": [
+    "web-component",
+    "polymer",
+    "platinum",
+    "firebase",
+    "service-worker"
+  ],
+  "main": "service-subscription-token.html",
+  "license": "https://heka-house-polymer-demos.firebaseio.com/LICENSE",
+  "homepage": "https://github.com/HekaHouse/service-subscription-token/",
+  "ignore": [
+    "/.*",
+    "/test/"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.2.0",
+    "firebase-element": "GoogleWebComponents/firebase-element#^1.0.12"
+  },
+  "devDependencies": {
+    "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
+    "web-component-tester": "^4.0.0"
+  }
+}

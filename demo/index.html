@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+    <title>service-subscription-token demo</title>
+    <script src="../../bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+    <link rel="import" href="../service-subscription-token.html">
+
+    <link rel="manifest" href="manifest.json">
+    <style is="custom-style" include="demo-pages-shared-styles">
+      app-header span {
+        margin: 16px;
+      }
+    </style>
+  </head>
+  <body unresolved>
+    <template is="dom-bind">
+      <app-header condenses fixed effects="resize-title blend-background waterfall">
+        <span>loads a service-subscription-token into firebase.</span>
+      </app-header>
+
+      <service-subscription-token
+        subscription-key-path="https://heka-house-polymer-demos.firebaseio.com/subscriptions"
+        subscription-id="sample"
+        subscription-key="{{subscriptionKey}}">
+      </service-subscription-token>
+
+      <span>subscription key: {{subscriptionKey}}</span>
+
+  </template>
+</body>

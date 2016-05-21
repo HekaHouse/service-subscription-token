@@ -1,3 +1,7 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../firebase-element/firebase-document.html">
+
+<!--
 # service-subscription-token
 
 `<service-subscription-token>` A polymer element to retrieve a subscription key from Firebase.
@@ -39,3 +43,45 @@ Then, go ahead and download the element's dependencies:
 service-subscription-token depends only on firebase-element from Google
 
 ## Related
+
+@group HekaHouse
+@element service-subscription-token
+@demo demo/index.html
+-->
+
+<dom-module id="service-subscription-token">
+  <template>
+  <style>
+    :host {
+      display: block;
+    }
+  </style>
+  <firebase-document
+    id="subscriptionDoc"
+    data="{{subscriptionKey}}"></firebase-document>
+  </template>
+</dom-module>
+<script>
+
+  Polymer({
+    is: 'service-subscription-token',
+    properties: {
+      subscriptionKey: {
+        type: String,
+        notify: true
+      },
+      subscriptionKeyPath: {
+        type: String,
+        notify: true
+      },
+      subscriptionId: {
+        type: String,
+        notify: true
+      }
+    },
+    observers: ['_applyLocation(subscriptionKeyPath,subscriptionId)'],
+    _applyLocation: function(subscriptionKeyPath,subscriptionId) {
+      this.$.subscriptionDoc.location = subscriptionKeyPath+"/"+subscriptionId;
+    }
+  });
+</script>
